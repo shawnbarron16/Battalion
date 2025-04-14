@@ -23,9 +23,16 @@ public class MissionType : ScriptableObject
     public MissionDifficulty difficulty;
     public SpecialMissionEffect specialEffect = SpecialMissionEffect.None;
 
+
+    [Header("Mission Access")]
+    [Tooltip("Minimum player rank required to unlock this mission")]
+    public string requiredRank;
+
+
     [Header("Base Success Chance")]
     [Range(0f, 100f)]
     public float baseSuccessChance;
+
 
     [Header("Mission Rewards")]
     public List<MissionReward> rewards;
