@@ -10,6 +10,7 @@ public class IntelUIManager : MonoBehaviour
     public GameObject unitsPanel;
     public GameObject mapPanel;
     public GameObject orderAssetsPanel;
+    public GameObject missionInfoPanel;
 
     private Dictionary<string, GameObject> panelMap;
     
@@ -22,7 +23,8 @@ public class IntelUIManager : MonoBehaviour
             { "Resources", resourcesPanel},
             { "Units", unitsPanel},
             { "Campaign Map", mapPanel},
-            { "Order Assets", orderAssetsPanel}
+            { "Order Assets", orderAssetsPanel},
+            { "Mission Info", missionInfoPanel}
         };
 
         //Show missions panel by default
@@ -43,7 +45,7 @@ public class IntelUIManager : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning($"Panel '{panelName}' no found");
+            Debug.LogWarning($"Panel '{panelName}' not found");
         }
     }
 }

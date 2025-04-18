@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,8 +20,9 @@ public class IntelCenter : Interactable
         {
             intelUIPanel.SetActive(false);
         }
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        //Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
+        GameManager.SetUIOpen(false);
     }
     //Activate the intel UI
     public override void Interact()
@@ -36,8 +38,9 @@ public class IntelCenter : Interactable
             {
                 Debug.Log("Intel interface opened.");
 
-                Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = true;
+                //Cursor.lockState = CursorLockMode.None;
+                //Cursor.visible = true;
+                GameManager.SetUIOpen(true);
 
                 if(playerControlScripts != null)
                 {
@@ -52,8 +55,9 @@ public class IntelCenter : Interactable
             {
                 Debug.Log("Intel interface closed.");
 
-                Cursor.lockState = CursorLockMode.Locked;
-                Cursor.visible = false;
+                //Cursor.lockState = CursorLockMode.Locked;
+                //Cursor.visible = false;
+                GameManager.SetUIOpen(false);
 
                 if(playerControlScripts != null)
                 {
@@ -77,8 +81,9 @@ public class IntelCenter : Interactable
             intelUIPanel.SetActive(false);
 
             //Re-lock and hide the cursor and enable player movement
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
+            //Cursor.lockState = CursorLockMode.Locked;
+            //Cursor.visible = false;
+            GameManager.SetUIOpen(false);
 
             if(playerControlScripts != null)
             {
